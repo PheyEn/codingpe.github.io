@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  background: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.zoom-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.zoom-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* This makes the image cover the div */
+  background-position: center; /* This centers the image initially */
+  opacity: 0;
+  z-index: 1; /* All images start with the same z-index */
+}
+
+/* Initial state */
+#image1 {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  opacity: 0;
+  z-index: 5;
+  transition: opacity 0.5s ease; /* Smooth transition for text fading */
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  max-width: 600px;
+}
+
+.spacer {
+  height: 1000vh; /* Adjust this to control scroll distance */
+}
